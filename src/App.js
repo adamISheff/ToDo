@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Scroll from './components/Scroll';
 import Todos from './components/Todos';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
       {
         id: 1,
         title: 'Take out the trash',
-        completed: false
+        completed: true
       },
       {
         id: 2,
@@ -20,19 +21,48 @@ class App extends Component {
         id: 3,
         title: 'Milk the Cow',
         completed: false
+      },
+      {
+        id: 4,
+        title: 'Milk the Cow',
+        completed: false
+      },
+      {
+        id: 5,
+        title: 'Milk the Cow',
+        completed: false
+      },
+      {
+        id: 6,
+        title: 'Milk the Cow',
+        completed: false
+      },
+      {
+        id: 7,
+        title: 'Milk the Cow',
+        completed: false
+      },
+      {
+        id: 8,
+        title: 'Milk the Cow',
+        completed: false
       }
     ]
   }
   
+  markComplete = (id) => {
+    console.log(id);
+  }
+  
   render() {
-    console.log(this.state.todos);
       return (
         <div className="App">
-          <Todos todos={this.state.todos} />
+          <Scroll>
+            <Todos todos={this.state.todos} markComplete={this.markComplete} />
+          </Scroll>
         </div>
       );
     }  
 }
-
 
 export default App;
