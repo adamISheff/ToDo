@@ -8,6 +8,7 @@ import Header from './components/layout/header';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
 import ChuckJoke from './components/ChuckJoke';
+import DadJoke from './components/DadJoke';
 
 class App extends Component {
   state = {
@@ -65,6 +66,7 @@ class App extends Component {
         <Router>
           <div className="App">
             <Header />
+            <DadJoke />
             <ChuckJoke />
             <Route exact path="/" render={props => (
               <React.Fragment>
