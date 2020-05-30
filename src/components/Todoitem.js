@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+
 import logo from './$hitCoder-logo-white.png';
+import dumpTruck from './dump.png';
 
 export class TodoItem extends Component {
 
@@ -20,9 +22,13 @@ export class TodoItem extends Component {
             <div 
             className='grow flex items-center'
             style={this.getStyle()} 
-            onClick={this.props.markComplete.bind(this, id)}>
+            onClick={this.props.markComplete.bind(this,id)}>
                     <img src={logo} alt="The Coder I Am" />
-                    {title}
+                    <p style={{marginRight: 25}}>{title}</p>
+                    <img 
+                    src={dumpTruck} alt="Dump Truck" 
+                    style={{marginLeft: 50}}
+                    onClick={this.props.delTodo.bind(this,id)} />
             </div>
         )
     }
